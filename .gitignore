@@ -1,0 +1,17 @@
+# Ignore sensitive config files
+**/application.properties
+**/application.yml
+
+# Ignore build folders
+target/
+build/
+
+# IntelliJ files
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
