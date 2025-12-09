@@ -1,5 +1,6 @@
 package com.hcm.patientservice.service;
 
+import com.hcm.patientservice.dto.PatientRequestDTO;
 import com.hcm.patientservice.dto.PatientResponseDTO;
 import com.hcm.patientservice.mapper.PatientMapper;
 import com.hcm.patientservice.model.Patient;
@@ -21,5 +22,10 @@ public class PatientService {
         List<PatientResponseDTO> patientResponseDTOS = patients.stream()
                 .map(patient -> PatientMapper.toDto(patient)).toList();
         return patientResponseDTOS;
+    }
+
+    public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO){
+        Patient patient = patientRepository.save(PatientMapper.toModel(patientRequestDTO));
+        return PatientMapper.toDto(patient);
     }
 }
