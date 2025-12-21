@@ -47,6 +47,9 @@ public class PatientService {
         patient.setDateOfBirth(LocalDate.parse(patientRequestDTO.getDateOfBirth()));
         Patient updatedPatient = patientRepository.save(patient);
         return PatientMapper.toDto(updatedPatient);
+    }
 
+    public void deletePatient(UUID id){
+        patientRepository.deleteById(id);
     }
 }
