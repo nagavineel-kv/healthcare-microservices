@@ -1,13 +1,12 @@
-### CREATE Patient
-POST http://locahost:4000/patients
+### UPDATE existing patient
+PUT http://locahost:4000/patients
 Content-Type: application/json
 
 {
   "name": "John Doe",
   "email": "John@example.com",
   "address": "123 main st",
-  "dateOfBirth": "1995-09-09",
-  "registeredDate": "2024-11-28"
+  "dateOfBirth": "1995-09-09"
 }
 
 ###
